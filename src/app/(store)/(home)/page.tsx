@@ -39,7 +39,7 @@ export default async function Home() {
 
         <div className="absolute bottom-10 right-0 h-12 mr-2 flex items-center gap-2 max-w-[400px] rounded-full border-2 border-zinc-500 bg-black/60 p-1 pl-5">
           <span className="text-sm truncate">{highLightedProduct.title}</span>
-          <span className="flex h-full items-center justify-center rounded-full bg-violet-500 px-4 font-semibold">
+          <span className="flex h-full items-center justify-center rounded-full bg-green-700 px-4 font-semibold">
             {highLightedProduct.price.toLocaleString('pt-BR', {
               style: 'currency',
               currency: 'BRL',
@@ -68,7 +68,7 @@ export default async function Home() {
 
             <div className="absolute bottom-5 right-0 md:h-12 h-8 flex items-center gap-2 max-w-[280px] w-[90%] mr-2 justify-between rounded-full border-2 border-zinc-500 bg-black/60 p-1 pl-5">
               <span className="text-sm truncate">{product.title}</span>
-              <span className="flex h-full items-center justify-center rounded-full bg-violet-500 px-4 font-semibold">
+              <span className="flex h-full items-center justify-center rounded-full bg-green-700 px-4 font-semibold">
                 {product.price.toLocaleString('pt-BR', {
                   style: 'currency',
                   currency: 'BRL',

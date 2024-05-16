@@ -11,9 +11,9 @@ export default function Header() {
       <div className="flex items-center gap-5">
         <Link
           href="/"
-          className="md:text-2xl text-xl font-extrabold text-white"
+          className="md:text-2xl text-xl font-extrabold text-white hover:text-green-700"
         >
-          DevStore
+          MyStore
         </Link>
 
         <SearchForm />

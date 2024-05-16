@@ -10,7 +10,7 @@ export default function MenuCart() {
   return (
     <Link href={'/cart'}>
       <div
-        className={`fixed bottom-0 flex flex-col items-center justify-center md:hidden left-0 w-full h-[50px] rounded-t-xl px-2 bg-red-500/50 ${items.length > 0 ? 'flex' : 'hidden'}`}
+        className={`fixed bottom-0 flex flex-col items-center justify-center md:hidden left-0 w-full h-[50px] rounded-t-xl px-2 bg-green-500/50 ${items.length > 0 ? 'flex' : 'hidden'}`}
       >
         <p>
           {items.length} {items.length > 1 ? 'ítems' : 'ítem'} adicionado ao
