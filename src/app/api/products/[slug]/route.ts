@@ -5,7 +5,7 @@ export async function GET(
   _: Request,
   { params }: { params: { slug: string } },
 ) {
-  await new Promise((resolve) => setTimeout(resolve, 10000))
+  await new Promise((resolve) => setTimeout(resolve, 1000))
 
   const slug = z.string().parse(params.slug)
 

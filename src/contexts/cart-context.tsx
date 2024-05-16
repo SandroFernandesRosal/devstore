@@ -5,38 +5,75 @@ import { ReactNode, createContext, useContext, useState } from 'react'
 interface CartItem {
   productId: number
   quantity: number
+  price: number
+  slug: string
+  image: string
+  description: string
+  title: string
 }
 
 interface CartContextType {
   items: CartItem[]
-  addToCart: (productId: number) => void
+  addToCart: (
+    productId: number,
+    price: number,
+    slug: string,
+    image: string,
+    description: string,
+    title: string,
+  ) => void
+  handleMenu: () => void
+  menu: boolean
 }
 
 const CartContext = createContext({} as CartContextType)
 
 export function CartProvider({ children }: { children: ReactNode }) {
   const [cartItems, setCartItems] = useState<CartItem[]>([])
+  const [menu, setMenu] = useState(false)
 
-  function addToCart(productId: number) {
+  const handleMenu = () => {
+    setMenu(!menu)
+  }
+
+  function addToCart(
+    productId: number,
+    price: number,
+    slug: string,
+    title: string,
+    image: string,
+    description: string,
+  ) {
     setCartItems((state) => {
       const productInCart = state.some((item) => item.productId === productId)
 
       if (productInCart) {
-        return state.map((item) => {
-          if (item.productId === productId) {
-            return { ...item, quantity: item.quantity + 1 }
-          } else {
-            return item
-          }
-        })
+        return state.map((item) =>
+          item.productId === productId
+            ? {
+                ...item,
+                quantity: item.quantity + 1,
+                price,
+                slug,
+                title,
+                image,
+                description,
+              }
+            : item,
+        )
       } else {
-        return [...state, { productId, quantity: 1 }]
+        return [
+          ...state,
+          { productId, quantity: 1, price, slug, title, image, description },
+        ]
       }
     })
   }
 
   return (
-    <CartContext.Provider value={{ items: cartItems, addToCart }}>
+    <CartContext.Provider
+      value={{ items: cartItems, addToCart, handleMenu, menu }}
+    >
       {children}
     </CartContext.Provider>
   )

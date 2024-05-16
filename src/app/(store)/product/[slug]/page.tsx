@@ -42,7 +42,7 @@ export async function generateStaticParams() {
 export default async function ProductPage({ params }: ProductProps) {
   const product = await getProduct(params.slug)
   return (
-    <div className="relative grid max-h-[860px] grid-cols-3">
+    <div className="relative lg:grid max-h-[860px] grid-cols-3 gap-4 flex flex-col">
       <div className="col-span-2 overflow-hidden">
         <Image
           src={product.image}
@@ -107,7 +107,14 @@ export default async function ProductPage({ params }: ProductProps) {
           </div>
         </div>
 
-        <AddToCartButton productId={product.id} />
+        <AddToCartButton
+          productId={product.id}
+          price={product.price}
+          slug={product.slug}
+          title={product.title}
+          image={product.image}
+          description={product.description}
+        />
       </div>
     </div>
   )

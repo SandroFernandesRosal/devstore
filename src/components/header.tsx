@@ -3,12 +3,16 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { CartWidget } from './cart-widget'
 import { SearchForm } from './search-form'
+import Menu from './menu'
 
 export default function Header() {
   return (
-    <div className="flex  items-center justify-between">
+    <div className="flex  items-center justify-between ">
       <div className="flex items-center gap-5">
-        <Link href="/" className="text-2xl font-extrabold text-white">
+        <Link
+          href="/"
+          className="md:text-2xl text-xl font-extrabold text-white"
+        >
           DevStore
         </Link>
 
@@ -18,9 +22,12 @@ export default function Header() {
       <div className="flex items-center gap-4">
         <CartWidget />
 
-        <div className="w-px h-4 bg-zinc-700" />
+        <div className="hidden md:flex w-px h-4 bg-zinc-700" />
 
-        <Link href="/" className="flex items-center gap-2 hover:underline">
+        <Link
+          href="/"
+          className="md:flex items-center gap-2 hover:underline hidden"
+        >
           <span className="text-sm">Account</span>
           <Image
             src="https://github.com/sandrofernandesrosal.png"
@@ -30,6 +37,7 @@ export default function Header() {
             alt={'perfil'}
           />
         </Link>
+        <Menu />
       </div>
     </div>
   )
