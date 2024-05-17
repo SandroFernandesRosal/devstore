@@ -1,7 +1,6 @@
 'use client'
 import { useCart } from '@/contexts/cart-context'
 import { AlignRight, X, ShoppingBag } from 'lucide-react'
-
 import Link from 'next/link'
 import Image from 'next/image'
 
@@ -9,7 +8,7 @@ export default function Menu() {
   const { handleMenu, menu, items } = useCart()
   return (
     <>
-      {menu === false ? (
+      {!menu ? (
         <AlignRight
           onClick={handleMenu}
           size={40}
@@ -23,25 +22,35 @@ export default function Menu() {
         />
       )}
 
-      {menu && (
-        <div className="absolute top-20 left-0 z-30 flex min-h-screen w-[100%] transform flex-col items-center pt-5  gap-10 bg-bglightsecundary font-bold backdrop-blur-md transition-transform duration-500 ease-in-out dark:bg-bgdarksecundary md:hidden">
-          <Link href="/" className="flex items-center gap-2 hover:underline">
-            <span className="text-xl">Account</span>
-            <Image
-              src="https://github.com/sandrofernandesrosal.png"
-              className="h-6 w-6 rounded-full"
-              width={24}
-              height={24}
-              alt={'perfil'}
-            />
-          </Link>
+      <div
+        className={`fixed top-[75px] right-0 z-30 flex min-h-screen w-[70%] transform rounded-l-xl flex-col items-center pt-5 gap-10 bg-black/70 font-bold backdrop-blur-md transition-transform duration-300 md:hidden ${
+          menu ? 'translate-x-0 ' : 'translate-x-full'
+        }`}
+      >
+        <Link
+          href="/"
+          className="flex items-center gap-2 hover:underline"
+          onClick={handleMenu}
+        >
+          <span className="text-xl">Account</span>
+          <Image
+            src="https://github.com/sandrofernandesrosal.png"
+            className="h-6 w-6 rounded-full"
+            width={24}
+            height={24}
+            alt={'perfil'}
+          />
+        </Link>
 
-          <div className=" items-center gap-2 flex">
-            <ShoppingBag className="h-5 w-5" />
-            <span className="text-xl">Cart ({items.length})</span>
-          </div>
-        </div>
-      )}
+        <Link
+          href={'/cart'}
+          className="flex items-center gap-2"
+          onClick={handleMenu}
+        >
+          <ShoppingBag className="h-5 w-5" />
+          <span className="text-xl">Cart ({items.length})</span>
+        </Link>
+      </div>
     </>
   )
 }
