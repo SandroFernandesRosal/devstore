@@ -10,6 +10,11 @@ async function getFeaturedProducts(): Promise<Product[]> {
       revalidate: 60 * 60,
     },
   })
+
+  if (!response.ok) {
+    throw new Error('Failed to fetch data')
+  }
+
   const products = await response.json()
 
   return products

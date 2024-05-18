@@ -1,7 +1,7 @@
 import { AddToCartButton } from '@/components/add-to-cart-button'
 import { api } from '@/data/api'
-import { Product } from '@/data/types/products'
-import { Metadata } from 'next'
+import type { Product } from '@/data/types/products'
+import type { Metadata } from 'next'
 import Image from 'next/image'
 
 interface ProductProps {
@@ -16,6 +16,7 @@ async function getProduct(slug: string): Promise<Product> {
       revalidate: 60 * 60,
     },
   })
+
   const product = await response.json()
 
   return product

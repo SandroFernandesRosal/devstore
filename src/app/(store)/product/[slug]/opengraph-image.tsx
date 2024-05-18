@@ -5,7 +5,7 @@ import { env } from '@/env'
 import colors from 'tailwindcss/colors'
 import { ImageResponse } from 'next/og'
 
-export const alt = 'About Acme'
+export const alt = ''
 export const size = {
   width: 1200,
   height: 630,
@@ -16,7 +16,7 @@ export const contentType = 'image/png'
 async function getProduct(slug: string): Promise<Product> {
   const response = await api(`/products/${slug}`, {
     next: {
-      revalidate: 60 * 60,
+      revalidate: 60 * 15,
     },
   })
   const product = await response.json()
