@@ -3,11 +3,6 @@ import Image from 'next/image'
 import { redirect } from 'next/navigation'
 import { api } from '@/data/api'
 import { Product } from '@/data/types/products'
-import { Metadata } from 'next'
-
-export const metadata: Metadata = {
-  title: 'Busca',
-}
 
 interface SearchProps {
   searchParams: {
