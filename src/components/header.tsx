@@ -32,7 +32,7 @@ export default function Header() {
     <div
       className={`w-full z-40  flex items-center justify-between  py-4 px-8 transition-transform duration-300 ${showHeader ? 'transform translate-y-0 fixed bg-zinc-950 ' : 'transform -translate-y-full'} `}
     >
-      <div className="flex items-center justify-between w-full">
+      <div className="flex items-center justify-between gap-2 w-full">
         <div className="flex items-center">
           <Link
             href="/"

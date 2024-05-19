@@ -27,11 +27,11 @@ export default async function Home() {
     <div className="grid max-h-[860px] lg:grid-cols-9 lg:grid-rows-6 gap-6 px-8 mt-20">
       <Link
         href={`/product/${highLightedProduct.slug}`}
-        className=" group relative  col-span-6 row-span-6 rounded-lg bg-zinc-900 overflow-hidden flex justify-center items-end"
+        className=" group relative  col-span-6 row-span-6 rounded-lg bg-zinc-900 overflow-hidden flex justify-center items-end "
       >
         <Image
           src={highLightedProduct.image}
-          className="group-hover:scale-105 transition-transform duration-500 md:w-[70%] lg:w-[100%]"
+          className="group-hover:scale-105 transition-transform duration-500 md:w-[70%] lg:w-[90%]"
           width={920}
           height={920}
           alt=""
@@ -60,7 +60,7 @@ export default async function Home() {
           >
             <Image
               src={product.image}
-              className="group-hover:scale-105 transition-transform duration-500"
+              className="group-hover:scale-105 transition-transform duration-500 md:w-[70%] lg:w-[90%]"
               width={920}
               height={920}
               alt=""

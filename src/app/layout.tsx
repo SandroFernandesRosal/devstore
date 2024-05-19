@@ -8,8 +8,8 @@ const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
 
 export const metadata: Metadata = {
   title: {
-    template: '%s | Devstore',
-    default: 'Devstore',
+    template: '%s | MyStore',
+    default: 'MyStore',
   },
 }
 
