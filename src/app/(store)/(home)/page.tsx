@@ -11,10 +11,6 @@ async function getFeaturedProducts(): Promise<Product[]> {
     },
   })
 
-  if (!response.ok) {
-    throw new Error('Failed to fetch data')
-  }
-
   const products = await response.json()
 
   return products
