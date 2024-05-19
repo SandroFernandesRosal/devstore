@@ -11,7 +11,6 @@ export function SearchForm() {
   function handleSearch(event: FormEvent<HTMLFormElement>) {
     event.preventDefault()
 
-    // Assegure que o item é um HTMLInputElement
     const inputElement = event.currentTarget.elements.namedItem(
       'q',
     ) as HTMLInputElement
