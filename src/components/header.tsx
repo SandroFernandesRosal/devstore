@@ -1,5 +1,3 @@
-'use client'
-import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { CartWidget } from './cart-widget'
@@ -7,30 +5,9 @@ import { SearchForm } from './search-form'
 import Menu from './menu'
 
 export default function Header() {
-  const [showHeader, setShowHeader] = useState(true)
-  const [lastScrollY, setLastScrollY] = useState(0)
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY < lastScrollY) {
-        // Scrolling up
-        setShowHeader(true)
-      } else {
-        // Scrolling down
-        setShowHeader(false)
-      }
-      setLastScrollY(window.scrollY)
-    }
-
-    window.addEventListener('scroll', handleScroll)
-    return () => {
-      window.removeEventListener('scroll', handleScroll)
-    }
-  }, [lastScrollY])
-
   return (
     <div
-      className={`w-full z-40  flex items-center justify-between  py-4 px-8 transition-transform duration-300 ${showHeader ? 'transform translate-y-0 fixed bg-zinc-950 ' : 'transform -translate-y-full'} `}
+      className={`w-full z-40  flex items-center justify-between  py-4 px-8 bg-zinc-950/80 fixed '} `}
     >
       <div className="flex items-center justify-between gap-2 w-full">
         <div className="flex items-center">
