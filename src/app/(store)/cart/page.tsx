@@ -1,5 +1,6 @@
 'use client'
 import MenuCart from '@/components/menu-cart'
+import { RemoveCartButton } from '@/components/removeToCart'
 import { useCart } from '@/contexts/cart-context'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -15,7 +16,7 @@ export default function Cart() {
             <Link
               key={product.productId}
               href={`/product/${product.slug}`}
-              className="group items-center flex-col rounded-lg bg-zinc-900 flex justify-center max-w-[45%] md:max-w-[35%] lg:max-w-[25%] "
+              className="group items-center flex-col rounded-lg bg-zinc-900 flex justify-center max-w-[75%] md:max-w-[35%] lg:max-w-[25%] pb-4 "
             >
               <Image
                 src={product.image}
@@ -36,6 +37,8 @@ export default function Cart() {
                   })}
                 </span>
               </div>
+
+              <RemoveCartButton productId={product.productId} />
             </Link>
           )
         })}

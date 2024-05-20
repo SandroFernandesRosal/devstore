@@ -24,6 +24,8 @@ interface CartContextType {
   ) => void
   handleMenu: () => void
   menu: boolean
+  clearCart: () => void
+  removeFromCart: (productId: number) => void
 }
 
 const CartContext = createContext({} as CartContextType)
@@ -34,6 +36,16 @@ export function CartProvider({ children }: { children: ReactNode }) {
 
   const handleMenu = () => {
     setMenu(!menu)
+  }
+
+  function clearCart() {
+    setCartItems([])
+  }
+
+  function removeFromCart(productId: number) {
+    setCartItems((state) =>
+      state.filter((item) => item.productId !== productId),
+    )
   }
 
   function addToCart(
@@ -72,7 +84,14 @@ export function CartProvider({ children }: { children: ReactNode }) {
 
   return (
     <CartContext.Provider
-      value={{ items: cartItems, addToCart, handleMenu, menu }}
+      value={{
+        items: cartItems,
+        addToCart,
+        removeFromCart,
+        handleMenu,
+        menu,
+        clearCart,
+      }}
     >
       {children}
     </CartContext.Provider>
