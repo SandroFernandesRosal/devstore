@@ -19,7 +19,7 @@ export default function MenuCart() {
                 {items.length} {items.length > 1 ? 'ítems' : 'ítem'} adicionado
                 ao carrinho
               </p>
-              {/* Correção aqui */}
+
               <p>Total: R$ {totalPrice}</p>
             </div>
           </Link>
