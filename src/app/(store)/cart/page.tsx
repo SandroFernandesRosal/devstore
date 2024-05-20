@@ -9,7 +9,7 @@ export default function Cart() {
   return (
     <div className="flex flex-col pt-20 min-h-screen mx-8 items-center">
       <MenuCart />
-      <div className="flex flex-wrap gap-4 justify-center">
+      <div className="flex flex-wrap gap-4 justify-center w-full">
         {items.map((product) => {
           return (
             <Link

@@ -1,5 +1,6 @@
 'use client'
 import { useCart } from '@/contexts/cart-context'
+import { ShoppingCart } from 'lucide-react'
 
 export interface AddToCartButtonProps {
   productId: number
@@ -10,7 +11,7 @@ export interface AddToCartButtonProps {
   description: string
 }
 
-export function AddToCartButton({
+export function ButtonCart({
   productId,
   price,
   slug,
@@ -25,12 +26,10 @@ export function AddToCartButton({
   }
 
   return (
-    <button
-      type="button"
+    <ShoppingCart
       onClick={handleAddProductToCart}
-      className="mt-8 h-12 max-w-[350px] flex items-center justify-center rounded-full bg-green-700 font-semibold text-white"
-    >
-      Adicionar ao carrinho
-    </button>
+      className=" hover:text-green-700 self-center cursor-pointer"
+      size={30}
+    />
   )
 }
