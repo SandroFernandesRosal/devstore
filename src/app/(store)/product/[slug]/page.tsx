@@ -108,6 +108,7 @@ export default async function ProductPage({ params }: ProductProps) {
           title={product.title}
           image={product.image}
           description={product.description}
+          quantity={product.quantity}
         />
       </div>
     </div>
