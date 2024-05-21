@@ -13,38 +13,45 @@ export default async function Products() {
   })
 
   const products = await response.json()
+
   return (
-    <div className="flex flex-wrap gap-2 justify-center mt-10">
-      {products.map((product: Product) => {
-        return (
-          <Link
-            href={`/product/${product.slug}`}
-            className="w-[100px] gap-2 pb-2 flex  flex-col justify-around md:w-[150px] lg:w-[200px] bg-zinc-900 rounded-md"
-            key={product.id}
-          >
-            <Image src={product.image} width={500} height={500} alt="" />
-            <p className="truncate text-center">{product.title}</p>
-            <div className="flex flex-col md:flex-row justify-evenly gap-2 mx-2 items-center">
-              <span className="flex  items-center justify-center rounded-full bg-green-700 px-4 font-semibold">
-                {product.price.toLocaleString('pt-BR', {
-                  style: 'currency',
-                  currency: 'BRL',
-                  minimumFractionDigits: 0,
-                  maximumFractionDigits: 0,
-                })}
-              </span>
-              <ButtonCart
-                productId={product.id}
-                price={product.price}
-                slug={product.slug}
-                title={product.title}
-                image={product.image}
-                description={product.description}
-              />
-            </div>{' '}
-          </Link>
-        )
-      })}
+    <div className="mt-10">
+      <h1 className="md:text-2xl ttext-lg font-bold mb-4 border-l-8 pl-2 border-green-700 rounded-lg">
+        Outros produtos
+      </h1>
+
+      <div className="flex flex-wrap w-full  gap-3 ">
+        {products.map((product: Product) => {
+          return (
+            <Link
+              href={`/product/${product.slug}`}
+              className="w-[100px] gap-2 pb-2 flex  flex-col justify-around md:w-[150px] lg:w-[200px] bg-zinc-900 rounded-md"
+              key={product.id}
+            >
+              <Image src={product.image} width={500} height={500} alt="" />
+              <p className="truncate text-center">{product.title}</p>
+              <div className="flex flex-col md:flex-row justify-evenly gap-2 mx-2 items-center">
+                <span className="flex  items-center justify-center rounded-full bg-green-700 px-4 font-semibold">
+                  {product.price.toLocaleString('pt-BR', {
+                    style: 'currency',
+                    currency: 'BRL',
+                    minimumFractionDigits: 0,
+                    maximumFractionDigits: 0,
+                  })}
+                </span>
+                <ButtonCart
+                  productId={product.id}
+                  price={product.price}
+                  slug={product.slug}
+                  title={product.title}
+                  image={product.image}
+                  description={product.description}
+                />
+              </div>{' '}
+            </Link>
+          )
+        })}
+      </div>
     </div>
   )
 }
