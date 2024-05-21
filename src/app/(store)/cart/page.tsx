@@ -38,7 +38,10 @@ export default function Cart() {
                 </span>
               </div>
 
-              <RemoveCartButton productId={product.productId} />
+              <RemoveCartButton
+                productId={product.productId}
+                quantity={product.quantity}
+              />
             </Link>
           )
         })}

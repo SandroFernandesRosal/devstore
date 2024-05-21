@@ -8,6 +8,7 @@ export interface AddToCartButtonProps {
   title: string
   image: string
   description: string
+  quantity: number
 }
 
 export function AddToCartButton({
@@ -17,11 +18,12 @@ export function AddToCartButton({
   image,
   description,
   title,
+  quantity,
 }: AddToCartButtonProps) {
   const { addToCart } = useCart()
 
   function handleAddProductToCart() {
-    addToCart(productId, price, slug, title, image, description)
+    addToCart(productId, price, slug, title, image, description, quantity)
   }
 
   return (

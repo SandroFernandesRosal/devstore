@@ -5,7 +5,10 @@ import Link from 'next/link'
 export default function MenuCart() {
   const { items, clearCart } = useCart()
 
-  const totalPrice = items.reduce((acc, item) => acc + item.price, 0)
+  const totalPrice = items.reduce(
+    (acc, item) => acc + item.price * item.quantity,
+    0,
+  )
 
   return (
     <>

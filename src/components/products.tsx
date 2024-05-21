@@ -23,13 +23,17 @@ export default async function Products() {
       <div className="flex flex-wrap w-full  gap-3 ">
         {products.map((product: Product) => {
           return (
-            <Link
-              href={`/product/${product.slug}`}
+            <div
               className="w-[100px] gap-2 pb-2 flex  flex-col justify-around md:w-[150px] lg:w-[200px] bg-zinc-900 rounded-md"
               key={product.id}
             >
-              <Image src={product.image} width={500} height={500} alt="" />
-              <p className="truncate text-center">{product.title}</p>
+              <Link href={`/product/${product.slug}`}>
+                {' '}
+                <Image src={product.image} width={500} height={500} alt="" />
+              </Link>
+              <Link href={`/product/${product.slug}`}>
+                <p className=" text-center px-1">{product.title}</p>
+              </Link>
               <div className="flex flex-col md:flex-row justify-evenly gap-2 mx-2 items-center">
                 <span className="flex  items-center justify-center rounded-full bg-green-700 px-4 font-semibold">
                   {product.price.toLocaleString('pt-BR', {
@@ -46,9 +50,10 @@ export default async function Products() {
                   title={product.title}
                   image={product.image}
                   description={product.description}
+                  quantity={product.quantity}
                 />
               </div>{' '}
-            </Link>
+            </div>
           )
         })}
       </div>

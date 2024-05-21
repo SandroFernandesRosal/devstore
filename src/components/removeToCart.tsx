@@ -1,27 +1,37 @@
 'use client'
 import { useCart } from '@/contexts/cart-context'
 import Link from 'next/link'
+import { Plus, Minus } from 'lucide-react'
 
 export interface RemoveToCartButtonProps {
   productId: number
+  quantity: number
 }
 
-export function RemoveCartButton({ productId }: RemoveToCartButtonProps) {
-  const { removeFromCart } = useCart()
+export function RemoveCartButton({
+  productId,
+  quantity,
+}: RemoveToCartButtonProps) {
+  const { removeOneFromCart, addOneToCart } = useCart()
 
-  console.log(removeFromCart)
+  function addQuantity() {
+    addOneToCart(productId)
+  }
 
-  function handleAddProductToCart() {
-    removeFromCart(productId)
+  function removeQuantity() {
+    removeOneFromCart(productId)
   }
 
   return (
     <Link
       href={`/cart`}
-      onClick={handleAddProductToCart}
-      className="p-2 flex items-center justify-center rounded-full bg-green-700 font-semibold text-white"
+      className="p-2 flex flex-col items-center justify-center font-semibold text-white"
     >
-      Remover
+      <div className="flex gap-4">
+        <Minus onClick={removeQuantity} className="text-3xl" />
+        {quantity}
+        <Plus onClick={addQuantity} className="text-3xl" />
+      </div>{' '}
     </Link>
   )
 }
