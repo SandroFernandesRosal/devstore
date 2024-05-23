@@ -16,7 +16,7 @@ export default async function Products() {
 
   return (
     <div className="mt-10">
-      <h1 className="md:text-2xl ttext-lg font-bold mb-4 border-l-8 pl-2 border-green-700 rounded-lg">
+      <h1 className="md:text-2xl ttext-lg font-bold mb-4 border-l-8 pl-2 border-green-950 rounded-lg">
         Outros produtos
       </h1>
 
@@ -27,20 +27,21 @@ export default async function Products() {
               className="w-[31%] gap-2 pb-2 flex  flex-col pt-2 md:w-[150px] lg:w-[200px] bg-zinc-900 rounded-md "
               key={product.id}
             >
-              <Link href={`/product/${product.slug}`}>
+              <Link href={`/product/${product.slug}`} className="group">
                 {' '}
                 <Image
                   src={product.image}
                   width={500}
                   height={500}
                   alt={product.title}
+                  className="group-hover:scale-105 transition-transform duration-500"
                 />
               </Link>
               <Link href={`/product/${product.slug}`}>
                 <p className=" text-center px-1">{product.title}</p>
               </Link>
               <div className="flex flex-col  md:flex-row justify-end md:items-end h-full md:justify-evenly gap-2 mx-2 items-center">
-                <span className="flex  items-center justify-center rounded-full bg-green-700 px-4 font-semibold">
+                <span className="flex  items-center justify-center rounded-full bg-green-950 px-4 font-semibold">
                   {product.price.toLocaleString('pt-BR', {
                     style: 'currency',
                     currency: 'BRL',

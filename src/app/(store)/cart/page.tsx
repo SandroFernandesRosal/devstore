@@ -15,7 +15,7 @@ export default function Cart() {
           return (
             <div
               key={product.productId}
-              className="group items-center flex-col rounded-lg bg-zinc-900 flex justify-center max-w-[75%] md:max-w-[35%] lg:max-w-[25%] pb-4 "
+              className="group items-center gap-2 py-2 flex-col rounded-lg bg-zinc-900 flex justify-start max-w-[47%] md:max-w-[35%] lg:max-w-[25%]"
             >
               <Link href={`/product/${product.slug}`}>
                 <Image
@@ -28,13 +28,15 @@ export default function Cart() {
                 />{' '}
               </Link>
 
-              <div className="md:h-12  z-20 flex my-2 items-center  gap-2 max-w-[260px] w-[90%] justify-between rounded-full border-2 border-zinc-500 bg-black/60 p-1 ">
-                <Link href={`/product/${product.slug}`} className=" truncate">
-                  {' '}
-                  <span className="text-sm  pl-2 ">{product.title}</span>{' '}
-                </Link>
+              <Link href={`/product/${product.slug}`} className=" ">
+                {' '}
+                <span className="text-sm px-1 text-center flex ">
+                  {product.title}
+                </span>{' '}
+              </Link>
 
-                <span className="flex h-full max-w-[60px]  items-center justify-center rounded-full bg-green-700 px-4 font-semibold">
+              <div className="flex flex-col  md:flex-row justify-end md:items-end h-full md:justify-evenly gap-2 mx-2 items-center">
+                <span className="flex  items-center justify-center rounded-full bg-green-950 px-4 font-semibold">
                   {product.price.toLocaleString('pt-BR', {
                     style: 'currency',
                     currency: 'BRL',
@@ -42,12 +44,12 @@ export default function Cart() {
                     maximumFractionDigits: 0,
                   })}
                 </span>
-              </div>
 
-              <AddOurRemoveToCart
-                productId={product.productId}
-                quantity={product.quantity}
-              />
+                <AddOurRemoveToCart
+                  productId={product.productId}
+                  quantity={product.quantity}
+                />
+              </div>
             </div>
           )
         })}

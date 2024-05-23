@@ -27,7 +27,7 @@ export default function MenuCart() {
           <div className="flex gap-2">
             <button
               onClick={clearCart}
-              className="p-2  flex  items-center justify-center rounded-md bg-green-700  text-white"
+              className="p-2  flex  items-center justify-center rounded-md bg-green-950  text-white"
             >
               Pagar
             </button>

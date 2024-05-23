@@ -30,7 +30,7 @@ export function AddToCartButton({
     <button
       type="button"
       onClick={handleAddProductToCart}
-      className="mt-8 h-12 flex items-center justify-center rounded-full bg-green-700 font-semibold text-white"
+      className="mt-8 h-12 flex items-center justify-center rounded-full bg-green-950 font-semibold text-white"
     >
       Adicionar ao carrinho
     </button>

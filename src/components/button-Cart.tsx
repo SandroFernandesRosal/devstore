@@ -1,6 +1,7 @@
 'use client'
 import { useCart } from '@/contexts/cart-context'
 import { ShoppingCart } from 'lucide-react'
+import { useEffect, useState } from 'react'
 
 export interface AddToCartButtonProps {
   productId: number
@@ -22,16 +23,35 @@ export function ButtonCart({
   quantity,
 }: AddToCartButtonProps) {
   const { addToCart } = useCart()
+  const [message, setMessage] = useState(false)
 
   function handleAddProductToCart() {
     addToCart(productId, price, slug, title, image, description, quantity)
+    setMessage(true)
   }
 
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setMessage(false)
+    }, 1000)
+
+    return () => clearInterval(interval)
+  }, [])
+
   return (
-    <ShoppingCart
-      onClick={handleAddProductToCart}
-      className=" hover:text-green-700  cursor-pointer"
-      size={30}
-    />
+    <>
+      <div className="absolute">
+        {message && (
+          <p className="w-[200px] text-center p-1 rounded-full bg-green-950 overflow-hidden ">
+            ítem adicionado ao carrinho
+          </p>
+        )}
+      </div>{' '}
+      <ShoppingCart
+        onClick={handleAddProductToCart}
+        className=" hover:text-green-950  cursor-pointer"
+        size={30}
+      />
+    </>
   )
 }

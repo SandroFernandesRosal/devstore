@@ -5,7 +5,7 @@ export default function Footer() {
     <footer className="flex flex-col justify-center items-center">
       <Link
         href="/"
-        className="md:text-2xl text-xl font-extrabold text-white hover:text-green-700"
+        className="md:text-2xl text-xl font-extrabold text-white hover:text-green-950"
       >
         MyStore
       </Link>
