@@ -23,7 +23,7 @@ export function AddOurRemoveToCart({
   }
 
   return (
-    <div className=" flex flex-col items-center justify-center font-semibold text-white">
+    <div className=" flex flex-col items-center justify-center font-semibold ">
       <div className="flex gap-4">
         <Minus onClick={removeQuantity} className="text-3xl cursor-pointer" />
         {quantity}

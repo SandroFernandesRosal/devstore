@@ -41,7 +41,7 @@ export function AddToCartButton({
     <>
       <div className="absolute">
         {message && (
-          <p className="w-[200px] text-center p-1 rounded-full bg-green-950 overflow-hidden ">
+          <p className="w-[200px] text-center p-1 rounded-full bg-primary overflow-hidden ">
             ítem adicionado ao carrinho
           </p>
         )}
@@ -49,7 +49,7 @@ export function AddToCartButton({
       <button
         type="button"
         onClick={handleAddProductToCart}
-        className="mt-8 h-12 flex items-center justify-center rounded-full bg-green-950 font-semibold text-white"
+        className="mt-8 h-12 flex items-center justify-center rounded-full bg-primary font-semibold "
       >
         Adicionar ao carrinho
       </button>

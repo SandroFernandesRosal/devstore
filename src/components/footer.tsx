@@ -5,11 +5,11 @@ export default function Footer() {
     <footer className="flex flex-col justify-center items-center">
       <Link
         href="/"
-        className="md:text-2xl text-xl font-extrabold text-white hover:text-green-950"
+        className="md:text-2xl text-xl font-extrabold  hover:text-primary"
       >
         MyStore
       </Link>
-      <p>Desenvolvido por Sandro Fernandes</p>
+      <p className="font-semibold text-lg">Desenvolvido por Sandro Fernandes</p>
     </footer>
   )
 }

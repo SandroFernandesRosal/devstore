@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
-
+import { Providers } from './providers'
 import { CartProvider } from '@/contexts/cart-context'
 import Header from '@/components/header'
 import Footer from '@/components/footer'
@@ -22,12 +22,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt" className={inter.variable}>
-      <body className="bg-zinc-950 text-zinc-50 antialiased">
-        <CartProvider>
-          <Header />
-          {children}
-          <Footer />
-        </CartProvider>
+      <body className="antialiased">
+        <Providers>
+          <CartProvider>
+            <Header />
+            {children}
+            <Footer />
+          </CartProvider>
+        </Providers>
       </body>
     </html>
   )

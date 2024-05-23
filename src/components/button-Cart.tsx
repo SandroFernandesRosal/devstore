@@ -42,14 +42,14 @@ export function ButtonCart({
     <>
       <div className="absolute">
         {message && (
-          <p className="w-[200px] text-center p-1 rounded-full bg-green-950 overflow-hidden ">
+          <p className="w-[200px] text-center p-1 rounded-full bg-primary overflow-hidden ">
             ítem adicionado ao carrinho
           </p>
         )}
       </div>{' '}
       <ShoppingCart
         onClick={handleAddProductToCart}
-        className=" hover:text-green-950  cursor-pointer"
+        className=" hover:text-primary  cursor-pointer"
         size={30}
       />
     </>

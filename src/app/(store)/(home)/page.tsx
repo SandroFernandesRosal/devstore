@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 
 export default function Home() {
   return (
-    <div className="min-h-screen  pt-20">
+    <div className="min-h-screen  pt-[100px]">
       <Highlights />
       <Products />
     </div>

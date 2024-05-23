@@ -22,7 +22,7 @@ export default async function Highlights() {
     <div className="grid  lg:grid-cols-9 lg:grid-rows-6 gap-6">
       <Link
         href={`/product/${highLightedProduct.slug}`}
-        className=" group relative  col-span-6 row-span-6 rounded-lg bg-zinc-900 overflow-hidden flex justify-center items-end "
+        className=" group relative  col-span-6 row-span-6 rounded-lg bg-bglightsecundary dark:bg-bgdarksecundary overflow-hidden flex justify-center items-end shadow shadow-gray-500 "
       >
         <Image
           src={highLightedProduct.image}
@@ -33,9 +33,9 @@ export default async function Highlights() {
           quality={100}
         />
 
-        <div className="absolute bottom-10 right-0 h-12 mr-2 flex items-center gap-2 max-w-[350px]  rounded-full border-2 border-zinc-500 bg-black/60 p-1 pl-5">
+        <div className="absolute bottom-10 right-0 h-12 mr-2 flex items-center gap-2 max-w-[350px]  rounded-full border-2 border-zinc-500 dark:bg-bgdarksecundary/70 bg-bglightsecundary/70 p-1 pl-5">
           <span className="text-sm truncate">{highLightedProduct.title}</span>
-          <span className="flex h-full items-center justify-center rounded-full bg-green-950 px-4 font-semibold">
+          <span className="flex h-full items-center justify-center rounded-full bg-primary px-4 font-semibold">
             {highLightedProduct.price.toLocaleString('pt-BR', {
               style: 'currency',
               currency: 'BRL',
@@ -51,7 +51,7 @@ export default async function Highlights() {
           <Link
             key={product.id}
             href={`/product/${product.slug}`}
-            className="group relative col-span-3 row-span-3 rounded-lg bg-zinc-900 overflow-hidden flex justify-center items-end"
+            className="group relative col-span-3 row-span-3 rounded-lg bg-bglightsecundary dark:bg-bgdarksecundary overflow-hidden flex justify-center items-end shadow shadow-gray-500"
           >
             <Image
               src={product.image}
@@ -62,9 +62,9 @@ export default async function Highlights() {
               quality={100}
             />
 
-            <div className="absolute bottom-5 right-0 md:h-12 h-8 flex items-center gap-2 max-w-[280px] w-[90%] mr-2 justify-between rounded-full border-2 border-zinc-500 bg-black/60 p-1 pl-5">
+            <div className="absolute bottom-5 right-0 md:h-12 h-8 flex items-center gap-2 max-w-[280px] w-[90%] mr-2 justify-between rounded-full border-2 border-zinc-500 dark:bg-bgdarksecundary/70 bg-bglightsecundary/70 p-1 pl-5">
               <span className="text-sm truncate">{product.title}</span>
-              <span className="flex h-full items-center justify-center rounded-full bg-green-950 px-4 font-semibold">
+              <span className="flex h-full items-center justify-center rounded-full bg-primary px-4 font-semibold">
                 {product.price.toLocaleString('pt-BR', {
                   style: 'currency',
                   currency: 'BRL',

@@ -8,14 +8,14 @@ import Link from 'next/link'
 export default function Cart() {
   const { items } = useCart()
   return (
-    <div className="flex flex-col pt-20 min-h-screen mx-8 items-center">
+    <div className="flex flex-col pt-[100px] min-h-screen mx-8 items-center">
       <MenuCart />
       <div className="flex flex-wrap gap-4 justify-center w-full">
         {items.map((product) => {
           return (
             <div
               key={product.productId}
-              className="group items-center gap-2 py-2 flex-col rounded-lg bg-zinc-900 flex justify-start max-w-[47%] lg:max-w-[25%]"
+              className="group items-center gap-2 py-2 flex-col rounded-lg bg-bglightsecundary dark:bg-bgdarksecundary shadow shadow-gray-500 flex justify-start max-w-[47%] lg:max-w-[25%]"
             >
               <Link href={`/product/${product.slug}`}>
                 <Image
@@ -36,7 +36,7 @@ export default function Cart() {
               </Link>
 
               <div className="flex flex-col  justify-end  h-full gap-2 mx-2 items-center">
-                <span className="flex  items-center justify-center rounded-full bg-green-950 px-4 font-semibold">
+                <span className="flex  items-center justify-center rounded-full bg-primary px-4 font-semibold">
                   {product.price.toLocaleString('pt-BR', {
                     style: 'currency',
                     currency: 'BRL',

@@ -27,7 +27,7 @@ export function SearchForm() {
   return (
     <form
       onSubmit={handleSearch}
-      className="flex max-w-[320px] items-center md:gap-3 rounded-full bg-zinc-900 md:px-5 md:py-3 px-1 py-1 ring-zinc-700"
+      className="flex max-w-[320px] items-center md:gap-3 rounded-full dark:bg-bgdarksecundary bg-bglightsecundary  md:px-5  p-1 shadow shadow-gray-500"
     >
       <Search className="w- h-5 text-zinc-500" />
       <input

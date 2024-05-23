@@ -3,17 +3,18 @@ import Image from 'next/image'
 import { CartWidget } from './cart-widget'
 import { SearchForm } from './search-form'
 import Menu from './menu'
+import ChangeTheme from './changeTheme'
 
 export default function Header() {
   return (
     <div
-      className={`w-full z-40  flex items-center justify-between    py-4 px-5 md:px-28 bg-zinc-950/80 fixed '} `}
+      className={`w-full z-40 shadow shadow-gray-500 flex items-center justify-between    py-4 px-5 md:px-28 dark:bg-bgdark bg-bglight fixed '} `}
     >
       <div className="flex items-center justify-between gap-2 w-full">
         <div className="flex items-center">
           <Link
             href="/"
-            className="md:text-2xl text-xl font-extrabold text-white hover:text-green-950"
+            className="md:text-2xl text-xl font-extrabold hover:text-green-950"
           >
             MyStore
           </Link>
@@ -22,6 +23,10 @@ export default function Header() {
         <SearchForm />
 
         <div className="flex items-center gap-4">
+          <div className="hidden md:flex">
+            <ChangeTheme />
+          </div>
+
           <CartWidget />
           <div className="hidden md:flex w-px h-4 bg-zinc-700" />
 
