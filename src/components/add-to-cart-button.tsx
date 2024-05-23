@@ -1,5 +1,6 @@
 'use client'
 import { useCart } from '@/contexts/cart-context'
+import { useEffect, useState } from 'react'
 
 export interface AddToCartButtonProps {
   productId: number
@@ -21,18 +22,37 @@ export function AddToCartButton({
   quantity,
 }: AddToCartButtonProps) {
   const { addToCart } = useCart()
+  const [message, setMessage] = useState(false)
 
   function handleAddProductToCart() {
     addToCart(productId, price, slug, title, image, description, quantity)
+    setMessage(true)
   }
 
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setMessage(false)
+    }, 1000)
+
+    return () => clearInterval(interval)
+  }, [])
+
   return (
-    <button
-      type="button"
-      onClick={handleAddProductToCart}
-      className="mt-8 h-12 flex items-center justify-center rounded-full bg-green-950 font-semibold text-white"
-    >
-      Adicionar ao carrinho
-    </button>
+    <>
+      <div className="absolute">
+        {message && (
+          <p className="w-[200px] text-center p-1 rounded-full bg-green-950 overflow-hidden ">
+            ítem adicionado ao carrinho
+          </p>
+        )}
+      </div>{' '}
+      <button
+        type="button"
+        onClick={handleAddProductToCart}
+        className="mt-8 h-12 flex items-center justify-center rounded-full bg-green-950 font-semibold text-white"
+      >
+        Adicionar ao carrinho
+      </button>
+    </>
   )
 }
