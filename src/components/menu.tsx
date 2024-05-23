@@ -1,6 +1,6 @@
 'use client'
 import { useCart } from '@/contexts/cart-context'
-import { AlignRight, X, ShoppingBag } from 'lucide-react'
+import { AlignRight, X, ShoppingCart } from 'lucide-react'
 import Link from 'next/link'
 import Image from 'next/image'
 
@@ -23,7 +23,7 @@ export default function Menu() {
       )}
 
       <div
-        className={`fixed top-[75px] right-0 z-30 flex min-h-screen w-[70%] transform rounded-l-xl flex-col items-center pt-5 gap-10 bg-black/70 font-bold backdrop-blur-md transition-transform duration-300 md:hidden ${
+        className={`fixed top-[75px]  right-0 z-30 flex min-h-screen w-[70%] transform rounded-l-xl flex-col items-center pt-5 gap-10 bg-black/70 font-bold backdrop-blur-md transition-transform duration-300 md:hidden ${
           menu ? 'translate-x-0 ' : 'translate-x-full'
         }`}
       >
@@ -32,7 +32,7 @@ export default function Menu() {
           className="flex items-center gap-2 hover:underline"
           onClick={handleMenu}
         >
-          <span className="text-xl">Account</span>
+          <span className="text-xl">Sandro Fernandes</span>
           <Image
             src="https://github.com/sandrofernandesrosal.png"
             className="h-6 w-6 rounded-full"
@@ -47,7 +47,7 @@ export default function Menu() {
           className="flex items-center gap-2"
           onClick={handleMenu}
         >
-          <ShoppingBag className="h-5 w-5" />
+          <ShoppingCart />
           <span className="text-xl">Cart ({items.length})</span>
         </Link>
       </div>

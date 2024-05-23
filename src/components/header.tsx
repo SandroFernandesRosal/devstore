@@ -29,7 +29,7 @@ export default function Header() {
             href="/"
             className="md:flex items-center gap-2 hover:underline hidden"
           >
-            <span className="text-sm">Account</span>
+            <span className="text-sm">Sandro Fernandes</span>
             <Image
               src="https://github.com/sandrofernandesrosal.png"
               className="h-6 w-6 rounded-full"

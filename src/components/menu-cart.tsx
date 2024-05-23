@@ -1,6 +1,5 @@
 'use client'
 import { useCart } from '@/contexts/cart-context'
-import Link from 'next/link'
 
 export default function MenuCart() {
   const { items, clearCart } = useCart()
@@ -13,26 +12,34 @@ export default function MenuCart() {
   return (
     <>
       {items.length > 0 ? (
-        <>
-          <Link href={'/cart'}>
-            <div
-              className={`flex flex-col items-center justify-center w-full h-[50px] rounded-t-xl px-2 ${items.length > 0 ? 'flex' : 'hidden'} mb-4`}
-            >
-              <p>
-                {items.length} {items.length > 1 ? 'ítems' : 'ítem'} adicionado
-                ao carrinho
-              </p>
+        <div
+          className={`flex justify-evenly z-30 shadow  shadow-white  bg-zinc-900  bottom-0 left-0 fixed items-center py-1   w-full  rounded-t-xl px-2 ${items.length > 0 ? 'flex' : 'hidden'}`}
+        >
+          <div>
+            {' '}
+            <p>
+              {items.length} {items.length > 1 ? 'ítems' : 'ítem'} adicionado ao
+              carrinho
+            </p>
+            <p>Total: R$ {totalPrice}</p>
+          </div>
 
-              <p>Total: R$ {totalPrice}</p>
-            </div>
-          </Link>
-          <button
-            onClick={clearCart}
-            className="p-2 mb-4 flex items-center justify-center rounded-full bg-green-700 font-semibold text-white"
-          >
-            Comprar
-          </button>
-        </>
+          <div className="flex gap-2">
+            <button
+              onClick={clearCart}
+              className="p-2  flex  items-center justify-center rounded-md bg-green-700  text-white"
+            >
+              Pagar
+            </button>
+
+            <button
+              onClick={clearCart}
+              className="p-2  flex  items-center justify-center rounded-md bg-red-700  text-white"
+            >
+              Limpar
+            </button>
+          </div>
+        </div>
       ) : (
         <p>Nenhum ítem no carrinho</p>
       )}

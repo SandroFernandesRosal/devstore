@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title: 'Home',
 }
 
-export default async function Home() {
+export default function Home() {
   return (
     <div className="min-h-screen  pt-20">
       <Highlights />

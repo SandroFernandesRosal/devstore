@@ -1,6 +1,6 @@
 'use client'
 import MenuCart from '@/components/menu-cart'
-import { RemoveCartButton } from '@/components/removeToCart'
+import { AddOurRemoveToCart } from '@/components/addOurRemoveToCart'
 import { useCart } from '@/contexts/cart-context'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -28,15 +28,13 @@ export default function Cart() {
                 />{' '}
               </Link>
 
-              <div className="md:h-12 h-8 z-20 flex my-2 items-center gap-2 max-w-[280px] w-[90%] justify-between rounded-full border-2 border-zinc-500 bg-black/60 p-1 ">
-                <Link href={`/product/${product.slug}`}>
+              <div className="md:h-12  z-20 flex my-2 items-center  gap-2 max-w-[260px] w-[90%] justify-between rounded-full border-2 border-zinc-500 bg-black/60 p-1 ">
+                <Link href={`/product/${product.slug}`} className=" truncate">
                   {' '}
-                  <span className="text-sm truncate pl-1">
-                    {product.title}
-                  </span>{' '}
+                  <span className="text-sm  pl-2 ">{product.title}</span>{' '}
                 </Link>
 
-                <span className="flex h-full items-center justify-center rounded-full bg-green-700 px-4 font-semibold">
+                <span className="flex h-full max-w-[60px]  items-center justify-center rounded-full bg-green-700 px-4 font-semibold">
                   {product.price.toLocaleString('pt-BR', {
                     style: 'currency',
                     currency: 'BRL',
@@ -46,7 +44,7 @@ export default function Cart() {
                 </span>
               </div>
 
-              <RemoveCartButton
+              <AddOurRemoveToCart
                 productId={product.productId}
                 quantity={product.quantity}
               />
