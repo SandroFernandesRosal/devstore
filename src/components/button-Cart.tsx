@@ -30,7 +30,7 @@ export function ButtonCart({
   return (
     <ShoppingCart
       onClick={handleAddProductToCart}
-      className=" hover:text-green-700 self-center cursor-pointer"
+      className=" hover:text-green-700  cursor-pointer"
       size={30}
     />
   )

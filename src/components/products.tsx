@@ -8,7 +8,7 @@ import Link from 'next/link'
 export default async function Products() {
   const response = await api('/products', {
     next: {
-      revalidate: 60 * 60,
+      revalidate: 1,
     },
   })
 
@@ -20,21 +20,26 @@ export default async function Products() {
         Outros produtos
       </h1>
 
-      <div className="flex flex-wrap w-full  gap-3 ">
+      <div className="flex flex-wrap w-full  gap-3 justify-center md:justify-start ">
         {products.map((product: Product) => {
           return (
             <div
-              className="w-[100px] gap-2 pb-2 flex  flex-col justify-around md:w-[150px] lg:w-[200px] bg-zinc-900 rounded-md"
+              className="w-[31%] gap-2 pb-2 flex  flex-col pt-2 md:w-[150px] lg:w-[200px] bg-zinc-900 rounded-md "
               key={product.id}
             >
               <Link href={`/product/${product.slug}`}>
                 {' '}
-                <Image src={product.image} width={500} height={500} alt="" />
+                <Image
+                  src={product.image}
+                  width={500}
+                  height={500}
+                  alt={product.title}
+                />
               </Link>
               <Link href={`/product/${product.slug}`}>
                 <p className=" text-center px-1">{product.title}</p>
               </Link>
-              <div className="flex flex-col md:flex-row justify-evenly gap-2 mx-2 items-center">
+              <div className="flex flex-col  md:flex-row justify-end md:items-end h-full md:justify-evenly gap-2 mx-2 items-center">
                 <span className="flex  items-center justify-center rounded-full bg-green-700 px-4 font-semibold">
                   {product.price.toLocaleString('pt-BR', {
                     style: 'currency',

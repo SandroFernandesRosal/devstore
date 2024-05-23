@@ -36,14 +36,15 @@ export async function generateMetadata({
 export default async function ProductPage({ params }: ProductProps) {
   const product = await getProduct(params.slug)
   return (
-    <div className="relative lg:grid max-h-[860px] grid-cols-3 gap-4 flex flex-col pt-10 overflow-hidden">
-      <div className="col-span-2 overflow-hidden">
+    <div className="relative lg:grid  lg:grid-cols-3 gap-4 flex md:items-center flex-col pt-20 overflow-hidden">
+      <div className="lg:col-span-2 overflow-hidden">
         <Image
           src={product.image}
           alt=""
           width={1000}
           height={1000}
           quality={100}
+          className=""
         />
       </div>
       <div className="flex flex-col justify-center px-12">
