@@ -27,7 +27,7 @@ export function SearchForm() {
   return (
     <form
       onSubmit={handleSearch}
-      className="flex max-w-[320px] items-center md:gap-3 rounded-full dark:bg-bgdarksecundary bg-bglightsecundary    p-1 shadow shadow-gray-500 dark:shadow-shadowfooterdark"
+      className="flex  items-center md:gap-3 rounded-full dark:bg-bgdarksecundary bg-bglightsecundary    p-1 shadow shadow-gray-500 dark:shadow-shadowfooterdark"
     >
       <Search className="w- h-5 text-zinc-500" />
       <input
@@ -35,7 +35,7 @@ export function SearchForm() {
         value={query}
         onChange={(e) => setQuery(e.target.value)}
         placeholder="Buscar produtos..."
-        className=" bg-transparent text-sm outline-none placeholder:text-zinc-500 focus:ring-0 border-none rounded-full px-1"
+        className=" w-full bg-transparent text-sm outline-none placeholder:text-zinc-500 focus:ring-0 border-none rounded-full px-1"
         required
       />
     </form>

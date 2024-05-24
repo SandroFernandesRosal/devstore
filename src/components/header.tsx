@@ -22,7 +22,7 @@ export default function Header() {
 
         <SearchForm />
 
-        <div className="flex items-center gap-4 ">
+        <div className="flex items-center gap-4">
           <div className="hidden md:flex">
             <ChangeTheme />
           </div>
