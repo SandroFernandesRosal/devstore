@@ -24,7 +24,7 @@ export default async function Products() {
         {products.map((product: Product) => {
           return (
             <div
-              className="w-[31%] gap-2 pb-2 flex  flex-col pt-2 md:w-[150px] lg:w-[200px] dark:bg-bgdarksecundary bg-bglightsecundary shadow shadow-gray-500 rounded-md dark:shadow-shadowfooterdark  "
+              className="w-[31%] min-w-[120px] gap-2 pb-2 flex  flex-col pt-2 md:w-[150px] lg:w-[200px] dark:bg-bgdarksecundary bg-bglightsecundary shadow shadow-gray-500 rounded-md dark:shadow-shadowfooterdark  "
               key={product.id}
             >
               <Link href={`/product/${product.slug}`} className="group">
