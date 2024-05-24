@@ -8,7 +8,7 @@ import ChangeTheme from './changeTheme'
 export default function Header() {
   return (
     <div
-      className={`w-full z-40 shadow shadow-gray-500 flex items-center justify-between    py-4 px-5 md:px-28 dark:bg-bgdark bg-bglight fixed '} `}
+      className={`w-full z-40 shadow shadow-gray-500 flex items-center justify-between  dark:shadow-black dark:shadow-md py-4 px-5 md:px-28 dark:bg-bgdark bg-bglight fixed '} `}
     >
       <div className="flex items-center justify-between gap-2 w-full">
         <div className="flex items-center">

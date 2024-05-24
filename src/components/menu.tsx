@@ -24,7 +24,7 @@ export default function Menu() {
       )}
 
       <div
-        className={`fixed top-[70px]  right-0 z-30 flex min-h-screen w-[70%] shadow shadow-gray-500 transform rounded-l-xl flex-col items-center pt-5 gap-10 bg-bglightsecundary dark:bg-bgdarksecundary font-bold backdrop-blur-md transition-transform duration-300 md:hidden ${
+        className={`fixed top-[70px]  right-0 z-30 flex min-h-screen w-[70%] shadow shadow-gray-500 dark:shadow-shadowfooterdark transform rounded-l-xl flex-col items-center pt-5 gap-10 bg-bglightsecundary dark:bg-bgdarksecundary font-bold backdrop-blur-md transition-transform duration-300 md:hidden ${
           menu ? 'translate-x-0 ' : 'translate-x-full'
         }`}
       >

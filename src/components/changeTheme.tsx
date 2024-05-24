@@ -13,7 +13,7 @@ export default function ChangeTheme() {
 
   return (
     <ReactSwitch
-      className="flex items-center justify-center shadow shadow-gray-500"
+      className="flex items-center justify-center shadow shadow-gray-500 dark:shadow-shadowfooterdark "
       onChange={changeTheme}
       checked={theme === 'light'}
       checkedIcon={
@@ -24,8 +24,8 @@ export default function ChangeTheme() {
       }
       onColor={'#E4E4E7'}
       offColor={'#262626'}
-      onHandleColor={'#52525B'}
-      offHandleColor={'#fff'}
+      onHandleColor={'#10B981'}
+      offHandleColor={'#10B981'}
       activeBoxShadow={'0 0 1px 2px #70a1e0'}
     />
   )

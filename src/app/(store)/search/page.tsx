@@ -4,6 +4,7 @@ import { redirect } from 'next/navigation'
 import { api } from '@/data/api'
 import { Product } from '@/data/types/products'
 import { Metadata } from 'next'
+import { ButtonCart } from '@/components/button-Cart'
 
 interface SearchProps {
   searchParams: {
@@ -38,30 +39,32 @@ export default async function Search({ searchParams }: SearchProps) {
 
   return (
     <div className="flex flex-col gap-4 pt-20 px-8 min-h-screen">
-      <p className="text-sm">
+      <p className="text-sm text-center">
         Resultado Para: <span className="font-semibold">{query}</span>
       </p>
 
-      <div className="grid grid-cols-3 gap-6">
+      <div className="flex flex-wrap justify-center gap-4">
         {products.map((product) => {
           return (
-            <Link
+            <div
+              className=" w-[47%] max-w-[200px] gap-2 pb-2 flex  flex-col pt-2  lg:w-[200px] dark:bg-bgdarksecundary bg-bglightsecundary shadow shadow-gray-500 rounded-md dark:shadow-shadowfooterdark  "
               key={product.id}
-              href={`/product/${product.slug}`}
-              className=" group relative  rounded-lg bg-zinc-900 overflow-hidden flex justify-center items-end"
             >
-              <Image
-                src={product.image}
-                className="group-hover:scale-105 transition-transform duration-500"
-                width={480}
-                height={480}
-                alt=""
-                quality={100}
-              />
-
-              <div className="absolute bottom-5 right-0 md:h-12 h-8 flex items-center gap-2 max-w-[280px] w-[90%] mr-2 justify-between rounded-full border-2 border-zinc-500 bg-black/60 p-1 pl-5">
-                <span className="text-sm truncate">{product.title}</span>
-                <span className="flex h-full items-center justify-center rounded-full bg-green-700 px-4 font-semibold">
+              <Link href={`/product/${product.slug}`} className="group">
+                {' '}
+                <Image
+                  src={product.image}
+                  width={500}
+                  height={500}
+                  alt={product.title}
+                  className="group-hover:scale-105 transition-transform duration-500"
+                />
+              </Link>
+              <Link href={`/product/${product.slug}`}>
+                <p className=" text-center px-1">{product.title}</p>
+              </Link>
+              <div className="flex flex-col  md:flex-row justify-end md:items-end h-full md:justify-evenly gap-2 mx-2 items-center">
+                <span className="flex  items-center justify-center rounded-full bg-primary px-4 font-semibold">
                   {product.price.toLocaleString('pt-BR', {
                     style: 'currency',
                     currency: 'BRL',
@@ -69,8 +72,17 @@ export default async function Search({ searchParams }: SearchProps) {
                     maximumFractionDigits: 0,
                   })}
                 </span>
-              </div>
-            </Link>
+                <ButtonCart
+                  productId={product.id}
+                  price={product.price}
+                  slug={product.slug}
+                  title={product.title}
+                  image={product.image}
+                  description={product.description}
+                  quantity={product.quantity}
+                />
+              </div>{' '}
+            </div>
           )
         })}
       </div>

@@ -15,7 +15,7 @@ export default function Cart() {
           return (
             <div
               key={product.productId}
-              className="group items-center gap-2 py-2 flex-col rounded-lg bg-bglightsecundary dark:bg-bgdarksecundary shadow shadow-gray-500 flex justify-start max-w-[47%] lg:max-w-[25%]"
+              className="group items-center gap-2 py-2 flex-col rounded-lg bg-bglightsecundary dark:bg-bgdarksecundary shadow shadow-gray-500 dark:shadow-shadowfooterdark flex justify-start w-[47%] max-w-[200px] "
             >
               <Link href={`/product/${product.slug}`}>
                 <Image
