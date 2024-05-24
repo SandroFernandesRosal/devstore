@@ -13,9 +13,9 @@ export default function MenuCart() {
     <>
       {items.length > 0 ? (
         <div
-          className={`flex justify-evenly z-30 shadow  shadow-white  bg-zinc-900  bottom-0 left-0 fixed items-center py-1   w-full  rounded-t-xl px-2 ${items.length > 0 ? 'flex' : 'hidden'}`}
+          className={`flex justify-evenly z-30 shadow-shadowfooter dark:shadow-shadowfooterdark bg-bglightsecundary  dark:bg-bgdarksecundary  bottom-0 left-0 fixed items-center py-1   w-full  rounded-t-xl px-2 ${items.length > 0 ? 'flex' : 'hidden'}`}
         >
-          <div>
+          <div className="font-semibold">
             {' '}
             <p>
               {items.length} {items.length > 1 ? 'ítems' : 'ítem'} adicionado ao
@@ -27,14 +27,14 @@ export default function MenuCart() {
           <div className="flex gap-2">
             <button
               onClick={clearCart}
-              className="p-2  flex  items-center justify-center rounded-md bg-green-950  text-white"
+              className="p-2  flex font-semibold text-white items-center justify-center rounded-md bg-primary "
             >
               Pagar
             </button>
 
             <button
               onClick={clearCart}
-              className="p-2  flex  items-center justify-center rounded-md bg-red-700  text-white"
+              className="p-2  flex text-white font-semibold  items-center justify-center rounded-md bg-red-700  "
             >
               Limpar
             </button>
