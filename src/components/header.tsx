@@ -11,7 +11,7 @@ export default function Header() {
       className={`w-full z-40 shadow shadow-gray-500  flex items-center justify-between  dark:shadow-black dark:shadow-md py-4 px-5 md:px-20 lg:px-28 dark:bg-bgdark bg-bglight fixed '} `}
     >
       <div className="flex items-center justify-between gap-2 w-full ">
-        <div className="flex items-center gap-2">
+        <div className="flex items-center">
           <Link
             href="/"
             className="md:text-2xl text-xl font-extrabold hover:text-green-950"
@@ -22,7 +22,7 @@ export default function Header() {
 
         <SearchForm />
 
-        <div className="flex items-center gap-3 ">
+        <div className="flex items-center gap-4 ">
           <div className="hidden md:flex">
             <ChangeTheme />
           </div>
